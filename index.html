@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guida San Cataldo - Brochure A4</title>
+    <style>
+        /* Impostazioni Base e Font */
+        :root {
+            --blu-acciaio: #4A7C9D;
+            --verde-salvia: #9CB49C;
+            --arancio-tenue: #E8A87C;
+            --sfondo: #FAFAFA;
+            --testo: #333333;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #e0e0e0;
+            /* Sfondo scuro per vedere meglio i fogli su schermo */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--testo);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Dimensioni Foglio A4 Landscape */
+        .page {
+            width: 297mm;
+            height: 210mm;
+            background-color: var(--sfondo);
+            margin: 20px auto;
+            display: flex;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        /* Gestione delle 3 Colonne */
+        .panel {
+            width: 33.333%;
+            height: 100%;
+            padding: 15mm;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px dashed #cccccc;
+            /* Linea di piegatura guida */
+        }
+
+        .panel:last-child {
+            border-right: none;
+        }
+
+        /* Tipografia */
+        h1 {
+            color: var(--blu-acciaio);
+            font-size: 28px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: var(--blu-acciaio);
+            font-size: 18px;
+            border-bottom: 2px solid var(--verde-salvia);
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 14px;
+            color: var(--blu-acciaio);
+            margin-bottom: 5px;
+        }
+
+        p,
+        li {
+            font-size: 12px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        /* Elementi Grafici e Box */
+        .box-salvia {
+            background-color: rgba(156, 180, 156, 0.2);
+            border-left: 4px solid var(--verde-salvia);
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .box-avviso {
+            background-color: rgba(232, 168, 124, 0.2);
+            border: 2px solid var(--arancio-tenue);
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .box-contatti {
+            background-color: var(--blu-acciaio);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .box-contatti h2,
+        .box-contatti p {
+            color: white;
+            border-color: white;
+        }
+
+        /* QR Codes Placeholder */
+        .qr-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .qr-box {
+            width: 30%;
+            text-align: center;
+        }
+
+        .qr-placeholder {
+            width: 100%;
+            aspect-ratio: 1;
+            background-color: #ddd;
+            border: 1px solid #aaa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        /* Copertina specifica */
+        .cover-panel {
+            text-align: right;
+            justify-content: center;
+        }
+
+        .subtitle {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+            color: var(--arancio-tenue);
+            font-weight: bold;
+        }
+
+        /* Regole per la Stampa PDF */
+        @media print {
+            body {
+                background-color: white;
+                margin: 0;
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+
+            .panel {
+                border-right: none;
+            }
+
+            /* Nasconde le linee di piegatura in stampa */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+        <div class="panel">
+            <h2>Dintorni e Survival Kit</h2>
+            <h3>Mense DSU</h3>
+            <p>Le mense più vicine alla struttura. Controlla sempre gli orari sul sito ufficiale prima di incamminarti.
+            </p>
+
+            <h3>Supermercati</h3>
+            <p>Per la spesa tattica dell'ultimo minuto o per i rifornimenti settimanali. [Inserire nomi supermercati]
+            </p>
+
+            <h3>Palestre e Sport</h3>
+            <p>Mantieniti in forma sfruttando le strutture universitarie nei paraggi della residenza.</p>
+
+            <div class="box-salvia">
+                <h3>Tech & Info di Servizio</h3>
+                <p><strong>Wi-Fi:</strong> Connettiti alla rete eduroam con le tue credenziali di ateneo.</p>
+                <p><strong>Pausa Caffè:</strong> Scarica l'app [Nome App] per pagare comodamente alle macchinette del
+                    piano terra.</p>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="box-contatti">
+                <h2>Contatti Utili</h2>
+                <p><strong>Portineria San Cataldo:</strong><br>[Numero di telefono]</p>
+                <p><strong>Sportello DSU:</strong><br>[Email DSU]</p>
+            </div>
+
+            <h2>Link Rapidi</h2>
+            <div class="qr-container">
+                <div class="qr-box">
+                    <div class="qr-placeholder">QR Code</div>
+                    <p>Bando</p>
+                </div>
+                <div class="qr-box">
+                    <div class="qr-placeholder">QR Code</div>
+                    <p>FAQ</p>
+                </div>
+                <div class="qr-box">
+                    <div class="qr-placeholder">QR Code</div>
+                    <p>Guida Online</p>
+                </div>
+            </div>
+
+            <div class="box-avviso">
+                Accesso Gruppo WhatsApp:<br>
+                Richiedi il codice d'accesso o il link d'invito esclusivamente alla Portineria.
+            </div>
+        </div>
+
+        <div class="panel cover-panel">
+            <div style="margin-bottom: 50px;">
+                <h3 style="color: var(--testo);">[Logo DSU Toscana]</h3>
+            </div>
+            <h1>Guida di sopravvivenza</h1>
+            <div class="subtitle">San Cataldo Edition</div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="panel">
+            <h2>Area Lavanderia</h2>
+            <p><strong>Posizione:</strong> [Inserire piano/edificio]</p>
+
+            <h3>Questione Gettoni</h3>
+            <p>I gettoni per lavatrici e asciugatrici possono essere richiesti in portineria. Ricordati di controllare
+                gli orari di distribuzione.</p>
+
+            <h3>Regole d'Oro</h3>
+            <ul>
+                <li>Svuota sempre le tasche prima di caricare la lavatrice.</li>
+                <li>Rispetta i turni e non sovrascrivere le prenotazioni altrui.</li>
+                <li>Non lasciare i vestiti nell'oblò una volta terminato il ciclo: facilita la vita a chi viene dopo di
+                    te.</li>
+                <li>Lascia l'ambiente pulito e getta i flaconi vuoti negli appositi cestini.</li>
+            </ul>
+        </div>
+
+        <div class="panel">
+            <h2>Regole di Convivenza</h2>
+            <ul>
+                <li><strong>Silenzio:</strong> Rispetta le fasce orarie del silenzio, specialmente nelle ore notturne e
+                    durante la sessione d'esami.</li>
+                <li><strong>Spazi Comuni:</strong> Lascia gli ambienti esattamente come vorresti trovarli.</li>
+                <li><strong>Sicurezza:</strong> Assicurati di chiudere sempre a chiave la porta della tua camera.</li>
+            </ul>
+
+            <div class="box-salvia">
+                <h3>Ospiti: come funziona</h3>
+                <p>Vuoi far entrare un amico? Assicurati di registrare il tuo ospite seguendo la procedura in
+                    portineria. Ricorda che sei responsabile del comportamento dei tuoi ospiti all'interno della
+                    struttura e che ci sono orari limite per la permanenza.</p>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h2>Vivere la Residenza</h2>
+
+            <h3>Cucine Condivise</h3>
+            <ul>
+                <li>Pulisci tegami e fornelli subito dopo l'uso.</li>
+                <li>Non abbandonare piatti sporchi nel lavandino.</li>
+                <li>Etichetta sempre i tuoi alimenti nel frigorifero condiviso.</li>
+            </ul>
+
+            <h3>Aule Studio</h3>
+            <ul>
+                <li>Mantieni un clima di concentrazione.</li>
+                <li>Non occupare i posti lasciando i libri se ti assenti per molto tempo.</li>
+            </ul>
+
+            <h3>Aule Video e Relax</h3>
+            <p>Prenota lo spazio seguendo le istruzioni in bacheca. Al termine del film, ricorda di riordinare le sedie
+                e rimettere a posto i cavi.</p>
+
+            <h3>Attività in Residenza</h3>
+            <p>Tieni d'occhio le bacheche fisiche e il gruppo ufficiale per non perderti tornei, serate o riunioni
+                organizzate dagli studenti.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
