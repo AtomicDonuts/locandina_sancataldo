@@ -176,7 +176,12 @@
             font-size: 10px;
             font-weight: bold;
         }
-
+        .qr-img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain; /* Mantiene le proporzioni del QR code senza deformarlo */
+            flex-shrink: 0;      /* Evita che l'immagine si rimpicciolisca se il testo a lato è lungo */
+        }
         /* Copertina specifica */
         .cover-panel {
             text-align: right;
@@ -290,18 +295,18 @@
             <h2>Link Rapidi</h2>
             <div class="qr-container">
                 <div class="qr-item">
-                    <div class="qr-placeholder">[QR Code]</div>
+                    <img src="img/qr-bando.jpg" alt="QR Code Bando e FAQ" class="qr-img">
                     <a href="https://www.dsu.toscana.it/borsa-di-studio" target="_blank" class="qr-text">Bando e FAQ</a>
                 </div>
                 <div class="qr-item">
-                    <div class="qr-placeholder">[QR Code]</div>
-                    <a href="https://www.dsu.toscana.it/-/regolamenti-e-disciplinari" target="_blank"
-                        class="qr-text">Moduli e Regolamenti DSU</a>
+                    <img src="img/qr-moduli.jpg" alt="QR Code Moduli e Regolamenti" class="qr-img">
+                    <a href="https://www.dsu.toscana.it/-/regolamenti-e-disciplinari" target="_blank" class="qr-text">Moduli e
+                        Regolamenti DSU</a>
                 </div>
                 <div class="qr-item">
-                    <div class="qr-placeholder">[QR Code]</div>
-                    <a href="https://atomicdonuts.github.io/locandina_sancataldo/" target="_blank"
-                        class="qr-text">Versione Online Aggiornata</a>
+                    <img src="img/qr-online.jpg" alt="QR Code Versione Online" class="qr-img">
+                    <a href="https://atomicdonuts.github.io/locandina_sancataldo/" target="_blank" class="qr-text">Versione Online
+                        Aggiornata</a>
                 </div>
             </div>
 
@@ -312,7 +317,7 @@
         </div>
 
         <div class="panel cover-panel">
-            <img src="logo.png" alt="Logo DSU Toscana" class="logo-img">
+            <img src="img/logo.png" alt="Logo DSU Toscana" class="logo-img">
             <h1>Guida di sopravvivenza</h1>
             <div class="subtitle">San Cataldo Edition</div>
         </div>
