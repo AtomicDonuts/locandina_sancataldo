@@ -176,12 +176,16 @@
             font-size: 10px;
             font-weight: bold;
         }
+
         .qr-img {
             width: 100px;
             height: 100px;
-            object-fit: contain; /* Mantiene le proporzioni del QR code senza deformarlo */
-            flex-shrink: 0;      /* Evita che l'immagine si rimpicciolisca se il testo a lato è lungo */
+            object-fit: contain;
+            /* Mantiene le proporzioni del QR code senza deformarlo */
+            flex-shrink: 0;
+            /* Evita che l'immagine si rimpicciolisca se il testo a lato è lungo */
         }
+
         /* Copertina specifica */
         .cover-panel {
             text-align: right;
@@ -197,6 +201,13 @@
         .subtitle {
             font-family: 'Courier New', Courier, monospace;
             font-size: 14px;
+            color: var(--arancio-tenue);
+            font-weight: bold;
+        }
+
+        .subsubtitle {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
             color: var(--arancio-tenue);
             font-weight: bold;
         }
@@ -241,7 +252,9 @@
                 aperta tutti i giorni, anche nel weekend e i giorni festivi dalle 12:00 alle 14:30 e dalle 19:00 alle
                 21:30. Fornisce anche l'opzione di prendere al posto del pasto la pizza. È possibile prenotare il pranzo
                 d'asporto.</p>
-
+            <p>Controlla sempre sul sito ufficiale per ogni variazione di orario dovuta a interruzioni impreviste del
+                servizio, scioperi e festivià. Inoltre con l'app <strong>MyDSU</strong> puoi avere accesso al menù del
+                giorno!</p>
             <h3>Supermercati e Casa</h3>
             <ul>
                 <li><strong>Coop</strong>: Alimentari (10 minuti a piedi).</li>
@@ -280,7 +293,10 @@
                 <h2>Contatti Utili</h2>
                 <p><strong>Portineria San Cataldo:</strong><br>
                     <a href="tel:050567800">050 567800</a><br>
-                    <a href="mailto:portineria.sancataldo@dsu.toscana.it">portineria.sancataldo@dsu.toscana.it</a>
+                </p>
+                <p><strong>DSU Toscana:</strong><br>
+                    <a>Tramite Ticket su Sportello Studenti</a><br>
+                    <a href="https://sportellostudente.dsu.toscana.it/">https://sportellostudente.dsu.toscana.it/</a>
                 </p>
             </div>
 
@@ -291,13 +307,19 @@
                     <a href="https://www.dsu.toscana.it/borsa-di-studio" target="_blank" class="qr-text">Bando e FAQ</a>
                 </div>
                 <div class="qr-item">
+                    <img src="img/qr-mensa.png" alt="QR Code Versione Online" class="qr-img">
+                    <a href="https://canteen.dsutoscana.cloud/menu/" target="_blank" class="qr-text">Menu Mensa</a>
+                </div>
+                <div class="qr-item">
                     <img src="img/qr-moduli.jpg" alt="QR Code Moduli e Regolamenti" class="qr-img">
-                    <a href="https://www.dsu.toscana.it/-/regolamenti-e-disciplinari" target="_blank" class="qr-text">Moduli e
+                    <a href="https://www.dsu.toscana.it/-/regolamenti-e-disciplinari" target="_blank"
+                        class="qr-text">Moduli e
                         Regolamenti DSU</a>
                 </div>
                 <div class="qr-item">
                     <img src="img/qr-online.jpg" alt="QR Code Versione Online" class="qr-img">
-                    <a href="https://atomicdonuts.github.io/locandina_sancataldo/" target="_blank" class="qr-text">Versione Online
+                    <a href="https://atomicdonuts.github.io/locandina_sancataldo/" target="_blank"
+                        class="qr-text">Versione Online
                         Aggiornata</a>
                 </div>
             </div>
@@ -309,9 +331,9 @@
         </div>
 
         <div class="panel cover-panel">
-            <img src="img/logo.png" alt="Logo DSU Toscana" class="logo-img">
             <h1>Guida di sopravvivenza</h1>
             <div class="subtitle">San Cataldo Edition</div>
+            <div class="subsubtitle">A cura dei rappresentanti</div>
         </div>
 
     </div>
@@ -323,7 +345,7 @@
             <p>La lavanderia è posizionata nel piano interrato del blocco A. Non c'è modo di accedervi dal blocco B! È
                 aperta dalle 6:30 alle 00:00.</p>
 
-            <h3>Questione Gettoni</h3>
+            <h3>Gettoni Lavanderia</h3>
             <p>I gettoni devono essere ritirati in portineria. In totale sono 8 e possono essere usati sia per
                 l'asciugatrice (forniscono un ciclo di 1 ora di asciugatura) che per le lavatrici (forniscono un timer
                 di 1h e 45m). I primi 4 gettoni possono essere presi nella prima metà del mese (dal 1 al 15) e gli altri
@@ -370,6 +392,15 @@
                 <li><strong>Telefono in camera:</strong> Tienilo collegato, la portineria lo usa per contattarti.</li>
             </ul>
 
+            <h3>Convivenza</h3>
+            <ul>
+                <li><strong>Silenzio:</strong> Rispetta il silenzio notturno, dalle 23 alle 8 cerca di fare meno rumore
+                    possibile per non disturbare gli altri residenti che vogliono riposare.</li>
+                <li><strong>Pulizia: Mantieni pulita la camera e gli spazi comuni.</strong> .</li>
+                <li><strong>Assenze:</strong> Se dormi fuori anche una sola notte, avvisa la portineria e consegna la
+                    tessera. Per assenze oltre 35 giorni, dillo all'Ufficio Residenze e svuota la camera.</li>
+            </ul>
+
             <h3>Sicurezza e Divieti</h3>
             <ul>
                 <li><strong>Antincendio:</strong> Vietato fumare o accendere candele, rischi di far evacuare l'edificio.
@@ -380,62 +411,61 @@
                     rovinare l'intonaco.</li>
             </ul>
 
-            <h3>Convivenza e Assenze</h3>
-            <ul>
-                <li>Rispetta il silenzio notturno e spegni luci/acqua prima di uscire. Buste dell'immondizia gratis in
-                    portineria.</li>
-                <li><strong>Assenze:</strong> Se dormi fuori anche una sola notte, avvisa la portineria e consegna la
-                    tessera. Per assenze oltre 35 giorni, dillo all'Ufficio Residenze e svuota la camera.</li>
-            </ul>
-
             <div class="box-salvia"">
                 <h3>Ospiti: Le Regole d'Accesso</h3>
-                <p>Gli ospiti entrano solo dalle 7:00 all'1:00, previa registrazione in portineria con documento, e solo
+                <p>Gli ospiti entrano solo dalle 8:00 all'1:00, previa registrazione in portineria con documento, e solo
                     se tu sei presente. In doppia, puoi richiedere l'ospitalità notturna per un familiare/amico (vedi
                     sito DSU).</p>
-            </div>
+            </div>          
         </div>
 
-        <div class="panel">
-            <h2>Vivere la Residenza</h2>
+        <div class=" panel">
+                <h2>Vivere la Residenza</h2>
 
-            <h3>Cucine Condivise</h3>
-            <p>Si trovano su ogni piano (fine corridoio Blocco B) con induzione, microonde e bollitori. La regola base:
-                una cucina sporca è inutilizzabile. Pulisci fornelli, tavoli e microonde subito dopo l'uso, non lasciare
-                piatti nel lavandino e attento al cibo deperibile nei cassetti.</p>
+                <h3>Cucine Condivise</h3>
+                <p>Si trovano su ogni piano (fine corridoio Blocco B) con induzione, microonde e bollitori. La regola
+                    base:
+                    una cucina sporca è inutilizzabile. Pulisci fornelli, tavoli e microonde subito dopo l'uso, non
+                    lasciare
+                    piatti nel lavandino e attento al cibo deperibile negli armadietti.</p>
 
-            <h3>Aule Studio</h3>
-            <p>Sempre aperte (H24). Ce n'è una per piano nel Blocco A, più le aule centrali al 1° e 3° piano (che ne ha
-                anche una terza nel Blocco B). Mantieni il silenzio per non disturbare e ricorda che all'interno è
-                vietato mangiare.</p>
+                <h3>Aule Studio</h3>
+                <p>Sempre aperte (H24). Ce n'è una per piano nel Blocco A, più le aule centrali al 1° e 3° piano (che ne
+                    ha
+                    anche una terza nel Blocco B). Mantieni il silenzio per non disturbare e ricorda che all'interno è
+                    vietato mangiare.</p>
 
-            <h3>Aree Relax</h3>
-            <p>Di fronte alle aule studio del 1° e 3° piano, con tavolini e divanetti. Al 3° piano ci sono ping-pong e
-                biliardino: chiedi racchette e giochi in scatola in portineria. Trattali con cura e non alzare troppo la
-                voce la sera.</p>
+                <h3>Aree Relax</h3>
+                <p>Di fronte alle aule studio del 1° e 3° piano, con tavolini e divanetti. Al 3° piano ci sono ping-pong
+                    e
+                    biliardino: chiedi racchette e giochi in scatola in portineria. Trattali con cura e non alzare
+                    troppo la
+                    voce la sera.</p>
 
-            <h3>Aule Video</h3>
-            <p>Su ogni piano (tranne piano terra), aperte dalle 7:00 all'1:00. Prenotati in portineria per ritirare le
-                chiavi. Usale solo per contenuti multimediali (non per studiare a schermo spento) e lasciale sempre in
-                ordine.</p>
+                <h3>Aule Video</h3>
+                <p>Su ogni piano (tranne piano terra), aperte dalle 7:00 all'1:00. Prenotati in portineria per ritirare
+                    le
+                    chiavi. Usale solo per contenuti multimediali (non per studiare a schermo spento) e lasciale sempre
+                    in
+                    ordine.</p>
 
-            <h3>Attività in Residenza</h3>
-            <p>Tieni d'occhio la Community per scoprire attività e serate organizzate da rappresentanti o tutor DSU!</p>
+                <h3>Attività in Residenza</h3>
+                <p>Tieni d'occhio la Community per scoprire attività e serate organizzate da rappresentanti o tutor DSU!
+                </p>
 
-            <div class="box-salvia"">
+                <div class="box-salvia"">
                 <h3>Info di Servizio</h3>
                 <p><strong>Wi-Fi (DSU-PI):</strong> Usa le credenziali Unipi. Max 2 dispositivi. La sessione scade dopo
                     6 ore.</p>
                 <p><strong>Pausa Caffè:</strong> Paga alle macchinette (piano terra) scaricando l'app Coven.</p>
-                <p><strong>Spedizioni e Pacchi:</strong> Fai la delega in portineria (valida 6 mesi). L'indirizzo da
+                <p><strong>Spedizioni e Pacchi:</strong> Fai la delega in portineria! L'indirizzo da
                     usare è:<br>
                     <em>Via Paolo Semeraro 7/9, 56124 Pisa PI</em><br>
-                    (Specifica "Residenza Universitaria" per evitare consegne errate alla Guardia di Finanza!).
-                </p>
+                    (Specifica " Residenza Universitaria" per evitare consegne errate alla Guardia di Finanza!). </p>
+                </div>
             </div>
-        </div>
 
-    </div>
+        </div>
 
 </body>
 
