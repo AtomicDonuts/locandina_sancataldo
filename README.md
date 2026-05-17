@@ -1,9 +1,17 @@
 # Guida di Sopravvivenza di San Cataldo
 
-## Languages
-ITA:
-ENG:
+Una brochure informativa creata dai rappresentanti della residenza e progettata per orientare e supportare i nuovi studenti che alloggiano presso la Residenza Universitaria "San Cataldo".
 
-## Credits
-Project developed by **Pasquale 'Pascal' Napoli** 
-Revied by **Angela Somma**
+---
+
+## 📖 Consulta le Locandine Online
+
+* 🇮🇹 **Versione Italiana:** [Apri la locandina in Italiano](https://atomicdonuts.github.io/locandina_sancataldo/ita/)
+* 🇬🇧 **Versione Inglese:** [Apri la locandina in Inglese](https://atomicdonuts.github.io/locandina_sancataldo/eng/)
+
+
+## 👥 Crediti e Licenza
+
+* **Sviluppo e Progettazione:** Pascal 'AtomicDonuts' Napoli
+* **Revisione dei Contenuti:** Angela Somma
+* **Licenza:** Distributed under the [GNU General Public License v3](LICENSE).
