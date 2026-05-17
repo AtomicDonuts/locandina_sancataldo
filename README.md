@@ -7,7 +7,7 @@ Una brochure informativa creata dai rappresentanti della residenza e progettata 
 ## 📖 Consulta le Locandine Online
 
 * 🇮🇹 **Versione Italiana:** [Apri la locandina in Italiano](https://atomicdonuts.github.io/locandina_sancataldo/ita/)
-* 🇬🇧 **Versione Inglese:** [Apri la locandina in Inglese](https://atomicdonuts.github.io/locandina_sancataldo/eng/)
+* 🇬🇧 **English Version:** [Open the English version](https://atomicdonuts.github.io/locandina_sancataldo/eng/)
 
 
 ## 👥 Crediti e Licenza
