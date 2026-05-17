@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Guida San Cataldo - Brochure A4</title>
+    <title>San Cataldo Guide - A4 Brochure</title>
     <style>
-        /* Impostazioni Base e Palette */
+        /* Base Settings and Palette */
         :root {
             --blu-acciaio: #4A7C9D;
             --verde-salvia: #9CB49C;
@@ -25,7 +25,7 @@
             align-items: center;
         }
 
-        /* Dimensioni Foglio A4 Landscape */
+        /* A4 Landscape Dimensions */
         .page {
             width: 297mm;
             height: 210mm;
@@ -37,12 +37,11 @@
             overflow: hidden;
         }
 
-        /* Gestione delle 3 Colonne - Padding ridotto */
+        /* 3-Column Layout - Reduced Padding */
         .panel {
             width: 33.333%;
             height: 100%;
             padding: 8mm 15mm;
-            /* Ridotto per fare spazio */
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -53,7 +52,7 @@
             border-right: none;
         }
 
-        /* Tipografia ottimizzata per alte densità */
+        /* High-Density Typography Optimization */
         h1 {
             color: var(--blu-acciaio);
             font-size: 24px;
@@ -82,7 +81,6 @@
         p,
         li {
             font-size: 9.5px;
-            /* Dimensione perfetta per la stampa ad alta densità */
             line-height: 1.3;
             margin-top: 0;
             margin-bottom: 5px;
@@ -104,7 +102,7 @@
             text-decoration: underline;
         }
 
-        /* Elementi Grafici e Box compattati */
+        /* Compact Graphic Elements and Boxes */
         .box-salvia {
             background-color: rgba(156, 180, 156, 0.2);
             border-left: 4px solid var(--verde-salvia);
@@ -181,12 +179,10 @@
             width: 100px;
             height: 100px;
             object-fit: contain;
-            /* Mantiene le proporzioni del QR code senza deformarlo */
             flex-shrink: 0;
-            /* Evita che l'immagine si rimpicciolisca se il testo a lato è lungo */
         }
 
-        /* Copertina specifica */
+        /* Specific Cover Page styling */
         .cover-panel {
             text-align: right;
             justify-content: center;
@@ -212,7 +208,7 @@
             font-weight: bold;
         }
 
-        /* Regole per la Stampa PDF */
+        /* PDF Printing Rules */
         @media print {
             body {
                 background-color: white;
@@ -242,97 +238,83 @@
     <div class="page">
 
         <div class="panel">
-            <h2>Esplora i Dintorni</h2>
+            <h2>Explore the Surroundings</h2>
 
-            <h3>Mense DSU</h3>
-            <p><strong>Mensa Betti (10 min a piedi):</strong> In Largo Marchesi 12, è aperta dal lunedì al venerdì,
-                dalle
-                12:00 alle 14:30 e dalle 19:00 alle 21:15. Presenta anche l'opzione di prendere da asporto panini,
-                focacce, insalatone/pokè e spicchi di pizza, in base alle disponibilità del giorno.</p>
-            <p><strong>Mensa Praticelli (15 min a piedi):</strong> Situata al piano terra della omonima residenza, è
-                aperta tutti i giorni, anche nel weekend e i giorni festivi dalle 12:00 alle 14:30 e dalle 19:00 alle
-                21:30. È inoltre possibile prendere la pizza intera come pasto e prenotare il pasto d'asporto.</p>
-            <p>Controlla sempre sul sito ufficiale per ogni variazione di orario dovuta a interruzioni impreviste del
-                servizio, scioperi e festività. Inoltre con l'app <strong>MyDSU</strong> puoi avere accesso al menù del
-                giorno!</p>
-            <h3>Supermercati e Casa</h3>
+            <h3>DSU Canteens</h3>
+            <p><strong>Betti Canteen (10 min walk):</strong> Located at Largo Marchesi 12, it is open Monday to Friday, from 12:00 to 14:30 and from 19:00 to 21:15. It also offers take-away options such as sandwiches, focaccias, large salads/poké, and pizza slices, depending on daily availability.</p>
+            <p><strong>Praticelli Canteen (15 min walk):</strong> Located on the ground floor of the residence of the same name, it is open every day, including weekends and holidays, from 12:00 to 14:30 and from 19:00 to 21:30. You can also get a whole pizza as your meal or pre-order a take-away meal.</p>
+            <p>Always check the official website for any schedule changes due to unexpected service interruptions, strikes, or holidays. Also, with the <strong>MyDSU</strong> app, you can get access to the daily menu!</p>
+            
+            <h3>Supermarkets and Home Goods</h3>
             <ul>
-                <li><strong>Coop</strong>: Alimentari (10 minuti a piedi).</li>
-                <li><strong>Conad</strong>: Alimentari (15 minuti a piedi).</li>
-                <li><strong>Lidl</strong>: Alimentari (15 minuti a piedi).</li>
-                <li><strong>Carrefour</strong>: Alimentari (20 minuti a piedi).</li>
-                <li><strong>Livit Casa</strong>: Articoli per la casa (10 minuti a piedi)</li>
-                <li><strong>Iper Shopping</strong>: Articoli per la casa (15 minuti a piedi).</li>
+                <li><strong>Coop</strong>: Grocery store (10-minute walk).</li>
+                <li><strong>Conad</strong>: Grocery store (15-minute walk).</li>
+                <li><strong>Lidl</strong>: Grocery store (15-minute walk).</li>
+                <li><strong>Carrefour</strong>: Grocery store (20-minute walk).</li>
+                <li><strong>Livit Casa</strong>: Home goods (10-minute walk).</li>
+                <li><strong>Iper Shopping</strong>: Home goods (15-minute walk).</li>
             </ul>
 
-            <h3>Sport</h3>
+            <h3>Sports</h3>
             <ul>
-                <li><strong>Piscina Cisanello:</strong> Situata alle spalle della mensa Betti a circa 10 minuti a piedi
-                    di distanza.</li>
-                <li><strong>Fit Active Pisa:</strong> Situata nei pressi del Polo Fibonacci a circa 10 minuti a piedi
-                    dalla residenza.</li>
-                <li><strong>Palestra di Praticelli:</strong> Situata al piano terra della residenza omonima, a 15 minuti
-                    di distanza.</li>
-                <li><strong>CUS Pisa:</strong> Il Centro Universitario Sportivo è situato a quasi 30 minuti a piedi
-                    dalla residenza.</li>
+                <li><strong>Cisanello Swimming Pool:</strong> Located right behind the Betti canteen, about a 10-minute walk away.</li>
+                <li><strong>Fit Active Pisa:</strong> Gym located near Polo Fibonacci, about a 10-minute walk from the residence.</li>
+                <li><strong>Praticelli Gym:</strong> Located on the ground floor of the Praticelli residence, a 15-minute walk away.</li>
+                <li><strong>CUS Pisa:</strong> The University Sports Center is located nearly a 30-minute walk from the residence.</li>
             </ul>
 
-            <h3>Farmacia e Centro Medico</h3>
+            <h3>Pharmacy and Medical Center</h3>
             <ul>
-                <li><strong>Guardia Medica:</strong> Situata sulla strada parallela alla residenza, in via Garibaldi
-                    198.</li>
-                <li><strong>Farmacia Comunale 3:</strong> Situata a circa 15 minuti a piedi dalla residenza, in via
-                    Battisti 17.</li>
-                <li><strong>Distributore Praticelli:</strong> Nella residenza di Praticelli c'è un distributore
-                    automatico fornito anche di qualche articolo parafarmaceutico.</li>
+                <li><strong>Guardia Medica (Out-of-hours Medical Service):</strong> Located on the street parallel to the residence, at Via Garibaldi 198.</li>
+                <li><strong>Farmacia Comunale 3 (Public Pharmacy):</strong> Located about a 15-minute walk from the residence, at Via Battisti 17.</li>
+                <li><strong>Praticelli Vending Machine:</strong> Inside the Praticelli residence, there is a vending machine stocked with basic over-the-counter parapharmaceutical products.</li>
             </ul>
         </div>
 
         <div class="panel">
             <div class="box-contatti">
-                <h2>Contatti Utili</h2>
-                <p><strong>Portineria San Cataldo:</strong><br>
+                <h2>Useful Contacts</h2>
+                <p><strong>San Cataldo Front Desk:</strong><br>
                     <a href="tel:050567800">050 567800</a><br>
                 </p>
                 <p><strong>DSU Toscana:</strong><br>
-                    <a>Tramite Ticket su Sportello Studenti</a><br>
+                    <a>Via Support Ticket on the Student Portal</a><br>
                     <a href="https://sportellostudente.dsu.toscana.it/">https://sportellostudente.dsu.toscana.it/</a>
                 </p>
             </div>
 
-            <h2>Link Rapidi</h2>
+            <h2>Quick Links</h2>
             <div class="qr-container">
                 <div class="qr-item">
-                    <img src="../img/qr-bando.svg" alt="QR Code Bando e FAQ" class="qr-img">
-                    <a href="https://www.dsu.toscana.it/borsa-di-studio" target="_blank" class="qr-text">Bando e FAQ</a>
+                    <img src="../img/qr-bando.svg" alt="QR Code Call and FAQ" class="qr-img">
+                    <a href="https://www.dsu.toscana.it/borsa-di-studio" target="_blank" class="qr-text">Scholarship Call & FAQ</a>
                 </div>
                 <div class="qr-item">
-                    <img src="../img/qr-mensa.svg" alt="QR Code Versione Online" class="qr-img">
-                    <a href="https://canteen.dsutoscana.cloud/menu/" target="_blank" class="qr-text">Menu Mensa</a>
+                    <img src="../img/qr-mensa.svg" alt="QR Code Canteen Menu" class="qr-img">
+                    <a href="https://canteen.dsutoscana.cloud/menu/" target="_blank" class="qr-text">Canteen Menu</a>
                 </div>
                 <div class="qr-item">
-                    <img src="../img/qr-moduli.svg" alt="QR Code Moduli e Regolamenti" class="qr-img">
+                    <img src="../img/qr-moduli.svg" alt="QR Code Forms and Regulations" class="qr-img">
                     <a href="https://www.dsu.toscana.it/-/regolamenti-e-disciplinari" target="_blank"
-                        class="qr-text">Moduli e
-                        Regolamenti DSU</a>
+                        class="qr-text">DSU Forms & Regulations</a>
                 </div>
                 <div class="qr-item">
-                    <img src="../img/qr-online.svg" alt="QR Code Versione Online" class="qr-img">
+                    <img src="../img/qr-online.svg" alt="QR Code Online Version" class="qr-img">
                     <a href="https://atomicdonuts.github.io/locandina_sancataldo/" target="_blank"
-                        class="qr-text">Versione Online Aggiornata della Locandina</a>
+                        class="qr-text">Updated Online Version of the Guide</a>
                 </div>
             </div>
 
             <div class="box-avviso">
-                ACCESSO GRUPPO WHATSAPP<br><br>
-                Richiedi il codice d'accesso o il link d'invito esclusivamente alla Portineria della residenza.
+                WHATSAPP GROUP ACCESS<br><br>
+                Request the access code or invitation link exclusively from the residence Reception Desk.
             </div>
         </div>
 
         <div class="panel cover-panel">
             <h1>Survival Guide</h1>
             <div class="subtitle">San Cataldo Edition</div>
-            <div class="subsubtitle">A cura dei rappresentanti</div>
+            <div class="subsubtitle">Brought to you by your student representatives</div>
         </div>
 
     </div>
@@ -340,132 +322,89 @@
     <div class="page">
 
         <div class="panel">
-            <h2>L'Area Lavanderia</h2>
-            <p>La lavanderia è posizionata nel piano interrato del blocco A.<br> Non c'è modo di accedervi dal blocco
-                B.<br> È aperta dalle 6:30 alle 00:00.</p>
+            <h2>The Laundry Area</h2>
+            <p>The laundry room is located in the basement of Block A.<br> There is no access to it from Block B.<br> It is open from 6:30 AM to 12:00 AM (midnight).</p>
 
-            <h3>Gettoni Lavanderia</h3>
-            <p>I gettoni devono essere ritirati in portineria. In totale sono 8 e possono essere usati sia per
-                l'asciugatrice (forniscono un ciclo di 1 ora di asciugatura) che per le lavatrici (forniscono un ciclo
-                da 1h e 45m). I primi 4 gettoni possono essere presi nella prima metà del mese (dall' 1 al 15) e gli
-                altri 4 nella seconda metà (16-30/31).</p>
+            <h3>Laundry Tokens</h3>
+            <p>Tokens must be collected at the reception desk. There are 8 tokens in total per month, usable for both the dryer (providing a 1-hour drying cycle) and the washing machines (providing a 1h 45m cycle). The first 4 tokens can be collected during the first half of the month (1st to 15th) and the remaining 4 during the second half (16th to 30th/31st).</p>
 
-            <h3>Regole Generali</h3>
+            <h3>General Rules</h3>
             <ul>
-                <li><strong>Prenotazione:</strong> Per poter utilizzare la lavatrice/asciugatrice è necessario
-                    prenotarsi utilizzando gli appositi registri posti su ogni lavatrice. Non utilizzare la lavatrice se
-                    non
-                    l'hai prenotata o se sai che sforerai nel turno della persona successiva!</li>
-                <li><strong>Cosa non lavare:</strong> È assolutamente vietato lavare e asciugare tappeti e scarpe!</li>
-                <li><strong>Detersivi:</strong> È assolutamente vietato usare detersivi in polvere e detersivi non
-                    adatti all'uso in lavatrice!</li>
-                <li><strong>Sicurezza:</strong> È assolutamente vietato toccare le prese industriali!</li>
-                <li><strong>Pulizia:</strong> È necessario lasciare i macchinari puliti dopo averli usati. Questo
-                    include svuotarle di ogni indumento e pulire i filtri delle asciugatrici! Butta i flaconi vuoti e i
-                    fazzoletti salvacolore nel cestino. Lascia sempre aperti gli oblò, per evitare la proliferazione di
-                    batteri e muffa.</li>
-                <li><strong>Stendini:</strong> In lavanderia non ci sono stendini comuni! Non appropriarti dello
-                    stendino di qualcun altro!</li>
+                <li><strong>Booking:</strong> To use a washing machine or dryer, you must book a slot using the sign-up sheets placed on each machine. Do not use a machine if you haven't booked it or if you know your cycle will overlap with the next person's slot!</li>
+                <li><strong>Items Forbidden:</strong> Washing or drying carpets, rugs, and shoes is strictly forbidden!</li>
+                <li><strong>Detergents:</strong> Using powder detergents or any detergents not specifically formulated for washing machines is strictly forbidden!</li>
+                <li><strong>Safety:</strong> Touching the industrial power sockets is strictly forbidden!</li>
+                <li><strong>Cleanliness:</strong> You must leave the machines clean after use. This includes removing all your items and cleaning the dryer lint filters! Throw empty bottles and color catcher sheets into the trash. Always leave the machine doors slightly open to prevent bacteria and mold growth.</li>
+                <li><strong>Drying Racks:</strong> There are no communal drying racks in the laundry room! Do not take or use someone else's personal drying rack!</li>
             </ul>
 
             <div class="box-salvia">
-                <h3>Consigli Extra!</h3>
+                <h3>Extra Tips!</h3>
                 <ul>
-                    <li>Dato che la maggior parte dei lavaggi durano più di un'ora, cerca di prenotare sempre almeno 2
-                        ore, in modo da non sforare nel turno dopo. Le macchine possono metterci più tempo di quello
-                        segnato dal timer in base al carico e alla temperatura.</li>
-                    <li>Se fai ritardo o hai bisogno di uno stendino in prestito, segnalalo nel gruppo "Laundry Chat"
-                        nella community di WhatsApp!</li>
-                    <li>Sulle lavatrici trovi dei QR code che spiegano l'utilizzo e la durata dei programmi. Ricordati
-                        che puoi sempre usare la funzione "Risparmia Tempo" per ridurre il tempo del lavaggio!</li>
+                    <li>Since most wash cycles last longer than an hour, try to always book at least a 2-hour slot so you do not overlap with the next turn. Depending on the load size and water temperature, machines can take longer than the time shown on the timer.</li>
+                    <li>If you are running late or need to borrow a drying rack, give a heads-up in the "Laundry Chat" within the WhatsApp community!</li>
+                    <li>You will find QR codes on the washing machines explaining how to use them and program durations. Remember you can always use the "Time Save" (Risparmia Tempo) function to shorten the wash cycle!</li>
                 </ul>
             </div>
         </div>
 
         <div class="panel">
-            <h2>Vita in Camera e Sicurezza</h2>
+            <h2>Room Life and Safety</h2>
 
-            <h3>Comunicazioni Fondamentali</h3>
+            <h3>Essential Communications</h3>
             <ul>
-                <li><strong>Community WhatsApp:</strong> Non silenziare la "Bacheca", lì trovi avvisi su controlli,
-                    problematiche e info dai rappresentanti.</li>
-                <li><strong>Telefono in camera:</strong> Tienilo collegato, la portineria lo usa per contattarti.</li>
+                <li><strong>WhatsApp Community:</strong> Do not mute the "Bacheca" (Notice Board) channel; that is where you will find announcements about room checks, maintenance issues, and updates from your representatives.</li>
+                <li><strong>In-room Landline:</strong> Keep it plugged in; the reception desk uses it to contact you directly.</li>
             </ul>
 
-            <h3>Convivenza</h3>
+            <h3>Coexistence & Community Living</h3>
             <ul>
-                <li><strong>Silenzio:</strong> Rispetta il silenzio notturno, dalle 23:00 alle 8:00 cerca di fare meno
-                    rumore
-                    possibile per non disturbare i residenti che vogliono riposare.</li>
-                <li><strong>Pulizia:</strong> Mantieni pulita la camera e gli spazi comuni.</li>
-                <li><strong>Assenze:</strong> Se dormi fuori anche una sola notte, avvisa la portineria e consegna la
-                    tessera. Per assenze oltre 35 giorni, comunicalo all'Ufficio Residenze e svuota la camera.</li>
+                <li><strong>Quiet Hours:</strong> Respect the nightly quiet hours from 11:00 PM to 8:00 AM. Keep noise to an absolute minimum out of respect for residents who are sleeping.</li>
+                <li><strong>Cleanliness:</strong> Keep your room and communal spaces clean.</li>
+                <li><strong>Absences:</strong> If you sleep out for even a single night, notify the reception desk and hand in your access card. For absences exceeding 35 days, you must notify the "Ufficio Residenze" (Residence Office) and completely empty your room.</li>
             </ul>
 
-            <h3>Sicurezza e Divieti</h3>
+            <h3>Safety and Prohibitions</h3>
             <ul>
-                <li><strong>Antincendio:</strong> È vietato fumare o accendere candele all'interno, rischi di far
-                    evacuare l'edificio.</li>
-                <li><strong>Elettrodomestici:</strong> Niente apparecchi ad alta potenza o resistenze a vista.</li>
-                <li><strong>Porte d'emergenza:</strong> Non usarle per uscire o per far entrare esterni.</li>
-                <li><strong>Mobilio e Pareti:</strong> Non spostare i mobili e non appendere nulla ai muri per non
-                    rovinare l'intonaco.</li>
+                <li><strong>Fire Safety:</strong> Smoking or lighting candles inside is strictly forbidden; doing so risks setting off the alarms and evacuating the entire building.</li>
+                <li><strong>Appliances:</strong> High-power appliances or those with exposed heating elements are strictly prohibited.</li>
+                <li><strong>Emergency Doors:</strong> Do not use emergency exits for regular transit or to let guests in.</li>
+                <li><strong>Furniture and Walls:</strong> Do not move the furniture or hang anything on the walls to avoid damaging the plaster.</li>
             </ul>
 
-            <div class="box-salvia"">
-                <h3>Ospiti: Le Regole d'Accesso</h3>
-                <p>Gli ospiti entrano solo dalle 8:00 all'1:00, previa registrazione in portineria con documento, e solo
-                    se tu sei presente. In doppia, puoi richiedere l'ospitalità notturna per un familiare/amico (vedi
-                    sito DSU).</p>
+            <div class="box-salvia">
+                <h3>Guests: Access Rules</h3>
+                <p>Guests are allowed only from 8:00 AM to 1:00 AM, provided they register at the front desk with a valid ID and only while you are present. If you live in a double room, you can request overnight hospitality for a family member or friend (check the DSU website for details).</p>
             </div>          
         </div>
 
-        <div class=" panel">
-                <h2>Vivere la Residenza</h2>
+        <div class="panel">
+            <h2>Life in the Residence</h2>
 
-                <h3>Cucine Condivise</h3>
-                <p>Si trovano su ogni piano (fine corridoio Blocco B).<br>
-                    All'interno ci sono fornelli ad induzione, microonde e bollitori e 
-                    gli armadietti personali, di cui puoi chiedere la chiave in portineria!
-                    Pulisci sempre fornelli, tavoli e microonde subito dopo l'uso, non lasciare
-                    piatti sporchi nel lavandino e attento al cibo deperibile negli armadietti.</p>
+            <h3>Shared Kitchens</h3>
+            <p>Located on each floor (at the end of the Block B hallway).<br> Inside, you will find induction hobs, microwaves, kettles, and personal lockers, for which you can request the key at the front desk! Always clean the hobs, tables, and microwave immediately after use, do not leave dirty dishes in the sink, and watch out for perishable food in your locker.</p>
 
-                <h3>Aule Studio</h3>
-                <p>Sempre aperte, sono situate su tutti i piani.<br>
-                    Su tutti i piani ce n'è almeno una nel blocco A. In aggiunta, al 1° e 3° piano sono presenti delle
-                    aule studio centrali, tra i due blocchi. Infine al 3° piano c'è anche un aula studio nel blocco B.
-                    Mantieni il silenzio per non disturbare e ricorda che all'interno delle aule studio è vietato
-                    mangiare.</p>
+            <h3>Study Rooms</h3>
+            <p>Open 24/7, located on all floors.<br> There is at least one study room in Block A on every floor. Additionally, on the 1st and 3rd floors, there are central study rooms located between the two blocks. Finally, on the 3rd floor, there is also a study room in Block B. Please maintain silence so as not to disturb others, and remember that eating inside the study rooms is forbidden.</p>
 
-                <h3>Aree Relax</h3>
-                <p>Di fronte alle aule studio del 1° e 3° piano, con tavolini e divanetti. Al 3° piano ci sono ping-pong
-                    e biliardino: chiedi racchette e giochi in scatola in portineria. Trattali con cura e non alzare
-                    troppo la voce.</p>
+            <h3>Relax Areas</h3>
+            <p>Located opposite the study rooms on the 1st and 3rd floors, featuring small tables and sofas. On the 3rd floor, you'll find table tennis (ping-pong) and foosball: you can request paddles and board games at the reception desk. Treat them with care and keep your voice down.</p>
 
-                <h3>Aule Video</h3>
-                <p>Su ogni piano (tranne al piano terra), aperte dalle 8:00 all'1:00. Prenotati in portineria per
-                    ritirare
-                    le chiavi. Usale solo per visionare contenuti multimediali (non per studiare a schermo spento) e
-                    lasciale
-                    sempre in ordine.</p>
+            <h3>Media/Video Rooms</h3>
+            <p>Available on every floor (except the ground floor), open from 8:00 AM to 1:00 AM. Book your slot at the reception desk to collect the keys. Use them exclusively for watching multimedia content (not for studying with the screen off) and always leave them tidy.</p>
 
-                <h3>Attività in Residenza</h3>
-                <p>Tieni d'occhio la Community per scoprire attività e serate organizzate dai rappresentanti o tutor
-                    DSU!</p>
+            <h3>Residence Activities</h3>
+            <p>Keep an eye on the Community to discover activities and social nights organized by your student representatives or DSU tutors!</p>
 
-                <div class="box-salvia"">
-                <h3>Info di Servizio</h3>
-                <p><strong>Wi-Fi (DSU-PI):</strong> Usa le credenziali Unipi. Max 2 dispositivi. La sessione scade dopo
-                    6 ore.</p>
-                <p><strong>Pausa Caffè:</strong> Paga alle macchinette (piano terra) scaricando l'app Coven.</p>
-                <p><strong>Spedizioni e Pacchi:</strong> Fai la delega in portineria! L'indirizzo da
-                    usare è:<br>
-                    <em>Via Paolo Semeraro 7/9, 56124 Pisa PI</em><br>
-                    (Specifica " Residenza Universitaria" per evitare consegne errate alla Guardia di Finanza!). </p>
-                </div>
+            <div class="box-salvia">
+                <h3>Service Info</h3>
+                <p><strong>Wi-Fi (DSU-PI):</strong> Log in using your Unipi credentials. Maximum 2 devices. Sessions expire after 6 hours.</p>
+                <p><strong>Coffee Break:</strong> Pay at the vending machines (ground floor) by downloading the Coven app.</p>
+                <p><strong>Shipping and Parcels:</strong> Fill out the authorization form (delega) at the front desk! The address to use is:<br> <em>Via Paolo Semeraro 7/9, 56124 Pisa PI</em><br> (Make sure to specify "Residenza Universitaria" to avoid incorrect deliveries to the nearby Guardia di Finanza headquarters!). </p>
             </div>
-
         </div>
+
+    </div>
 
 </body>
 
