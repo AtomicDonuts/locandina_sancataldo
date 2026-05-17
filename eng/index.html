@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guida San Cataldo - Brochure A4</title>
+    <style>
+        /* Impostazioni Base e Palette */
+        :root {
+            --blu-acciaio: #4A7C9D;
+            --verde-salvia: #9CB49C;
+            --arancio-tenue: #E8A87C;
+            --sfondo: #FAFAFA;
+            --testo: #404040;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--testo);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Dimensioni Foglio A4 Landscape */
+        .page {
+            width: 297mm;
+            height: 210mm;
+            background-color: var(--sfondo);
+            margin: 20px auto;
+            display: flex;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        /* Gestione delle 3 Colonne - Padding ridotto */
+        .panel {
+            width: 33.333%;
+            height: 100%;
+            padding: 8mm 15mm;
+            /* Ridotto per fare spazio */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px dashed #cccccc;
+        }
+
+        .panel:last-child {
+            border-right: none;
+        }
+
+        /* Tipografia ottimizzata per alte densità */
+        h1 {
+            color: var(--blu-acciaio);
+            font-size: 24px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+
+        h2 {
+            color: var(--blu-acciaio);
+            font-size: 14px;
+            border-bottom: 2px solid var(--verde-salvia);
+            padding-bottom: 2px;
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+
+        h3 {
+            font-size: 11.5px;
+            color: var(--blu-acciaio);
+            margin-bottom: 2px;
+            margin-top: 8px;
+        }
+
+        p,
+        li {
+            font-size: 9.5px;
+            /* Dimensione perfetta per la stampa ad alta densità */
+            line-height: 1.3;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            padding-left: 12px;
+            margin-top: 2px;
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: var(--blu-acciaio);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Elementi Grafici e Box compattati */
+        .box-salvia {
+            background-color: rgba(156, 180, 156, 0.2);
+            border-left: 4px solid var(--verde-salvia);
+            padding: 6px 8px;
+            margin-top: 8px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .box-avviso {
+            background-color: rgba(232, 168, 124, 0.2);
+            border: 2px solid var(--arancio-tenue);
+            padding: 8px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: auto;
+            font-size: 10px;
+        }
+
+        .box-contatti {
+            background-color: var(--blu-acciaio);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .box-contatti h2 {
+            color: white;
+            border-color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 4px;
+        }
+
+        .box-contatti p,
+        .box-contatti a {
+            color: white;
+            font-size: 10px;
+            margin-bottom: 4px;
+        }
+
+        /* QR Codes */
+        .qr-container {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+        .qr-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .qr-placeholder {
+            width: 45px;
+            height: 45px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            color: #888;
+            flex-shrink: 0;
+        }
+
+        .qr-text {
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .qr-img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            /* Mantiene le proporzioni del QR code senza deformarlo */
+            flex-shrink: 0;
+            /* Evita che l'immagine si rimpicciolisca se il testo a lato è lungo */
+        }
+
+        /* Copertina specifica */
+        .cover-panel {
+            text-align: right;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .logo-img {
+            max-width: 160px;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            color: var(--arancio-tenue);
+            font-weight: bold;
+        }
+
+        .subsubtitle {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            color: var(--arancio-tenue);
+            font-weight: bold;
+        }
+
+        /* Regole per la Stampa PDF */
+        @media print {
+            body {
+                background-color: white;
+                margin: 0;
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+
+            .panel {
+                border-right: none;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <div class="panel">
+            <h2>Esplora i Dintorni</h2>
+
+            <h3>Mense DSU</h3>
+            <p><strong>Mensa Betti (10 min a piedi):</strong> In Largo Marchesi 12, è aperta dal lunedì al venerdì,
+                dalle
+                12:00 alle 14:30 e dalle 19:00 alle 21:15. Presenta anche l'opzione di prendere da asporto panini,
+                focacce, insalatone/pokè e spicchi di pizza, in base alle disponibilità del giorno.</p>
+            <p><strong>Mensa Praticelli (15 min a piedi):</strong> Situata al piano terra della omonima residenza, è
+                aperta tutti i giorni, anche nel weekend e i giorni festivi dalle 12:00 alle 14:30 e dalle 19:00 alle
+                21:30. È inoltre possibile prendere la pizza intera come pasto e prenotare il pasto d'asporto.</p>
+            <p>Controlla sempre sul sito ufficiale per ogni variazione di orario dovuta a interruzioni impreviste del
+                servizio, scioperi e festività. Inoltre con l'app <strong>MyDSU</strong> puoi avere accesso al menù del
+                giorno!</p>
+            <h3>Supermercati e Casa</h3>
+            <ul>
+                <li><strong>Coop</strong>: Alimentari (10 minuti a piedi).</li>
+                <li><strong>Conad</strong>: Alimentari (15 minuti a piedi).</li>
+                <li><strong>Lidl</strong>: Alimentari (15 minuti a piedi).</li>
+                <li><strong>Carrefour</strong>: Alimentari (20 minuti a piedi).</li>
+                <li><strong>Livit Casa</strong>: Articoli per la casa (10 minuti a piedi)</li>
+                <li><strong>Iper Shopping</strong>: Articoli per la casa (15 minuti a piedi).</li>
+            </ul>
+
+            <h3>Sport</h3>
+            <ul>
+                <li><strong>Piscina Cisanello:</strong> Situata alle spalle della mensa Betti a circa 10 minuti a piedi
+                    di distanza.</li>
+                <li><strong>Fit Active Pisa:</strong> Situata nei pressi del Polo Fibonacci a circa 10 minuti a piedi
+                    dalla residenza.</li>
+                <li><strong>Palestra di Praticelli:</strong> Situata al piano terra della residenza omonima, a 15 minuti
+                    di distanza.</li>
+                <li><strong>CUS Pisa:</strong> Il Centro Universitario Sportivo è situato a quasi 30 minuti a piedi
+                    dalla residenza.</li>
+            </ul>
+
+            <h3>Farmacia e Centro Medico</h3>
+            <ul>
+                <li><strong>Guardia Medica:</strong> Situata sulla strada parallela alla residenza, in via Garibaldi
+                    198.</li>
+                <li><strong>Farmacia Comunale 3:</strong> Situata a circa 15 minuti a piedi dalla residenza, in via
+                    Battisti 17.</li>
+                <li><strong>Distributore Praticelli:</strong> Nella residenza di Praticelli c'è un distributore
+                    automatico fornito anche di qualche articolo parafarmaceutico.</li>
+            </ul>
+        </div>
+
+        <div class="panel">
+            <div class="box-contatti">
+                <h2>Contatti Utili</h2>
+                <p><strong>Portineria San Cataldo:</strong><br>
+                    <a href="tel:050567800">050 567800</a><br>
+                </p>
+                <p><strong>DSU Toscana:</strong><br>
+                    <a>Tramite Ticket su Sportello Studenti</a><br>
+                    <a href="https://sportellostudente.dsu.toscana.it/">https://sportellostudente.dsu.toscana.it/</a>
+                </p>
+            </div>
+
+            <h2>Link Rapidi</h2>
+            <div class="qr-container">
+                <div class="qr-item">
+                    <img src="../img/qr-bando.svg" alt="QR Code Bando e FAQ" class="qr-img">
+                    <a href="https://www.dsu.toscana.it/borsa-di-studio" target="_blank" class="qr-text">Bando e FAQ</a>
+                </div>
+                <div class="qr-item">
+                    <img src="../img/qr-mensa.svg" alt="QR Code Versione Online" class="qr-img">
+                    <a href="https://canteen.dsutoscana.cloud/menu/" target="_blank" class="qr-text">Menu Mensa</a>
+                </div>
+                <div class="qr-item">
+                    <img src="../img/qr-moduli.svg" alt="QR Code Moduli e Regolamenti" class="qr-img">
+                    <a href="https://www.dsu.toscana.it/-/regolamenti-e-disciplinari" target="_blank"
+                        class="qr-text">Moduli e
+                        Regolamenti DSU</a>
+                </div>
+                <div class="qr-item">
+                    <img src="../img/qr-online.svg" alt="QR Code Versione Online" class="qr-img">
+                    <a href="https://atomicdonuts.github.io/locandina_sancataldo/" target="_blank"
+                        class="qr-text">Versione Online Aggiornata della Locandina</a>
+                </div>
+            </div>
+
+            <div class="box-avviso">
+                ACCESSO GRUPPO WHATSAPP<br><br>
+                Richiedi il codice d'accesso o il link d'invito esclusivamente alla Portineria della residenza.
+            </div>
+        </div>
+
+        <div class="panel cover-panel">
+            <h1>Survival Guide</h1>
+            <div class="subtitle">San Cataldo Edition</div>
+            <div class="subsubtitle">A cura dei rappresentanti</div>
+        </div>
+
+    </div>
+
+    <div class="page">
+
+        <div class="panel">
+            <h2>L'Area Lavanderia</h2>
+            <p>La lavanderia è posizionata nel piano interrato del blocco A.<br> Non c'è modo di accedervi dal blocco
+                B.<br> È aperta dalle 6:30 alle 00:00.</p>
+
+            <h3>Gettoni Lavanderia</h3>
+            <p>I gettoni devono essere ritirati in portineria. In totale sono 8 e possono essere usati sia per
+                l'asciugatrice (forniscono un ciclo di 1 ora di asciugatura) che per le lavatrici (forniscono un ciclo
+                da 1h e 45m). I primi 4 gettoni possono essere presi nella prima metà del mese (dall' 1 al 15) e gli
+                altri 4 nella seconda metà (16-30/31).</p>
+
+            <h3>Regole Generali</h3>
+            <ul>
+                <li><strong>Prenotazione:</strong> Per poter utilizzare la lavatrice/asciugatrice è necessario
+                    prenotarsi utilizzando gli appositi registri posti su ogni lavatrice. Non utilizzare la lavatrice se
+                    non
+                    l'hai prenotata o se sai che sforerai nel turno della persona successiva!</li>
+                <li><strong>Cosa non lavare:</strong> È assolutamente vietato lavare e asciugare tappeti e scarpe!</li>
+                <li><strong>Detersivi:</strong> È assolutamente vietato usare detersivi in polvere e detersivi non
+                    adatti all'uso in lavatrice!</li>
+                <li><strong>Sicurezza:</strong> È assolutamente vietato toccare le prese industriali!</li>
+                <li><strong>Pulizia:</strong> È necessario lasciare i macchinari puliti dopo averli usati. Questo
+                    include svuotarle di ogni indumento e pulire i filtri delle asciugatrici! Butta i flaconi vuoti e i
+                    fazzoletti salvacolore nel cestino. Lascia sempre aperti gli oblò, per evitare la proliferazione di
+                    batteri e muffa.</li>
+                <li><strong>Stendini:</strong> In lavanderia non ci sono stendini comuni! Non appropriarti dello
+                    stendino di qualcun altro!</li>
+            </ul>
+
+            <div class="box-salvia">
+                <h3>Consigli Extra!</h3>
+                <ul>
+                    <li>Dato che la maggior parte dei lavaggi durano più di un'ora, cerca di prenotare sempre almeno 2
+                        ore, in modo da non sforare nel turno dopo. Le macchine possono metterci più tempo di quello
+                        segnato dal timer in base al carico e alla temperatura.</li>
+                    <li>Se fai ritardo o hai bisogno di uno stendino in prestito, segnalalo nel gruppo "Laundry Chat"
+                        nella community di WhatsApp!</li>
+                    <li>Sulle lavatrici trovi dei QR code che spiegano l'utilizzo e la durata dei programmi. Ricordati
+                        che puoi sempre usare la funzione "Risparmia Tempo" per ridurre il tempo del lavaggio!</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h2>Vita in Camera e Sicurezza</h2>
+
+            <h3>Comunicazioni Fondamentali</h3>
+            <ul>
+                <li><strong>Community WhatsApp:</strong> Non silenziare la "Bacheca", lì trovi avvisi su controlli,
+                    problematiche e info dai rappresentanti.</li>
+                <li><strong>Telefono in camera:</strong> Tienilo collegato, la portineria lo usa per contattarti.</li>
+            </ul>
+
+            <h3>Convivenza</h3>
+            <ul>
+                <li><strong>Silenzio:</strong> Rispetta il silenzio notturno, dalle 23:00 alle 8:00 cerca di fare meno
+                    rumore
+                    possibile per non disturbare i residenti che vogliono riposare.</li>
+                <li><strong>Pulizia:</strong> Mantieni pulita la camera e gli spazi comuni.</li>
+                <li><strong>Assenze:</strong> Se dormi fuori anche una sola notte, avvisa la portineria e consegna la
+                    tessera. Per assenze oltre 35 giorni, comunicalo all'Ufficio Residenze e svuota la camera.</li>
+            </ul>
+
+            <h3>Sicurezza e Divieti</h3>
+            <ul>
+                <li><strong>Antincendio:</strong> È vietato fumare o accendere candele all'interno, rischi di far
+                    evacuare l'edificio.</li>
+                <li><strong>Elettrodomestici:</strong> Niente apparecchi ad alta potenza o resistenze a vista.</li>
+                <li><strong>Porte d'emergenza:</strong> Non usarle per uscire o per far entrare esterni.</li>
+                <li><strong>Mobilio e Pareti:</strong> Non spostare i mobili e non appendere nulla ai muri per non
+                    rovinare l'intonaco.</li>
+            </ul>
+
+            <div class="box-salvia"">
+                <h3>Ospiti: Le Regole d'Accesso</h3>
+                <p>Gli ospiti entrano solo dalle 8:00 all'1:00, previa registrazione in portineria con documento, e solo
+                    se tu sei presente. In doppia, puoi richiedere l'ospitalità notturna per un familiare/amico (vedi
+                    sito DSU).</p>
+            </div>          
+        </div>
+
+        <div class=" panel">
+                <h2>Vivere la Residenza</h2>
+
+                <h3>Cucine Condivise</h3>
+                <p>Si trovano su ogni piano (fine corridoio Blocco B).<br>
+                    All'interno ci sono fornelli ad induzione, microonde e bollitori e 
+                    gli armadietti personali, di cui puoi chiedere la chiave in portineria!
+                    Pulisci sempre fornelli, tavoli e microonde subito dopo l'uso, non lasciare
+                    piatti sporchi nel lavandino e attento al cibo deperibile negli armadietti.</p>
+
+                <h3>Aule Studio</h3>
+                <p>Sempre aperte, sono situate su tutti i piani.<br>
+                    Su tutti i piani ce n'è almeno una nel blocco A. In aggiunta, al 1° e 3° piano sono presenti delle
+                    aule studio centrali, tra i due blocchi. Infine al 3° piano c'è anche un aula studio nel blocco B.
+                    Mantieni il silenzio per non disturbare e ricorda che all'interno delle aule studio è vietato
+                    mangiare.</p>
+
+                <h3>Aree Relax</h3>
+                <p>Di fronte alle aule studio del 1° e 3° piano, con tavolini e divanetti. Al 3° piano ci sono ping-pong
+                    e biliardino: chiedi racchette e giochi in scatola in portineria. Trattali con cura e non alzare
+                    troppo la voce.</p>
+
+                <h3>Aule Video</h3>
+                <p>Su ogni piano (tranne al piano terra), aperte dalle 8:00 all'1:00. Prenotati in portineria per
+                    ritirare
+                    le chiavi. Usale solo per visionare contenuti multimediali (non per studiare a schermo spento) e
+                    lasciale
+                    sempre in ordine.</p>
+
+                <h3>Attività in Residenza</h3>
+                <p>Tieni d'occhio la Community per scoprire attività e serate organizzate dai rappresentanti o tutor
+                    DSU!</p>
+
+                <div class="box-salvia"">
+                <h3>Info di Servizio</h3>
+                <p><strong>Wi-Fi (DSU-PI):</strong> Usa le credenziali Unipi. Max 2 dispositivi. La sessione scade dopo
+                    6 ore.</p>
+                <p><strong>Pausa Caffè:</strong> Paga alle macchinette (piano terra) scaricando l'app Coven.</p>
+                <p><strong>Spedizioni e Pacchi:</strong> Fai la delega in portineria! L'indirizzo da
+                    usare è:<br>
+                    <em>Via Paolo Semeraro 7/9, 56124 Pisa PI</em><br>
+                    (Specifica " Residenza Universitaria" per evitare consegne errate alla Guardia di Finanza!). </p>
+                </div>
+            </div>
+
+        </div>
+
+</body>
+
+</html>
