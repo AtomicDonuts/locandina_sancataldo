@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guida San Cataldo - Brochure A4</title>
+    <style>
+        /* Impostazioni Base e Palette */
+        :root {
+            --blu-acciaio: #222222;
+            --verde-salvia: #777777;
+            --arancio-tenue: #555555;
+            --sfondo: #FFFFFF;
+            --testo: #000000;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--testo);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Dimensioni Foglio A4 Landscape */
+        .page {
+            width: 297mm;
+            height: 210mm;
+            background-color: var(--sfondo);
+            margin: 20px auto;
+            display: flex;
+            box-shadow: none;
+            page-break-after: always;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        /* Gestione delle 3 Colonne - Padding ridotto */
+        .panel {
+            width: 33.333%;
+            height: 100%;
+            padding: 8mm 15mm;
+            /* Ridotto per fare spazio */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px dashed #cccccc;
+        }
+
+        .panel:last-child {
+            border-right: none;
+        }
+
+        /* Tipografia ottimizzata per alte densità */
+        h1 {
+            color: var(--blu-acciaio);
+            font-size: 24px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+
+        h2 {
+            color: var(--blu-acciaio);
+            font-size: 14px;
+            border-bottom: 2px solid var(--verde-salvia);
+            padding-bottom: 2px;
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+
+        h3 {
+            font-size: 11.5px;
+            color: var(--blu-acciaio);
+            margin-bottom: 2px;
+            margin-top: 8px;
+        }
+
+        p,
+        li {
+            font-size: 9.5px;
+            /* Dimensione perfetta per la stampa ad alta densità */
+            line-height: 1.3;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            padding-left: 12px;
+            margin-top: 2px;
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: var(--blu-acciaio);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Elementi Grafici e Box compattati */
+        .box-salvia {
+            background-color: #f2f2f2 !important;
+            border-left: 4px solid var(--verde-salvia);
+            padding: 6px 8px;
+            margin-top: 8px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .box-avviso {
+            background-color: #e8e8e8 !important;
+            border: 2px solid var(--arancio-tenue);
+            padding: 8px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: auto;
+            font-size: 10px;
+        }
+
+        .box-contatti {
+            background-color: var(--blu-acciaio);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .box-contatti h2 {
+            color: white;
+            border-color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 4px;
+        }
+
+        .box-contatti p,
+        .box-contatti a {
+            color: white;
+            font-size: 10px;
+            margin-bottom: 4px;
+        }
+
+        /* QR Codes */
+        .qr-container {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+        .qr-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .qr-placeholder {
+            width: 45px;
+            height: 45px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            color: #888;
+            flex-shrink: 0;
+        }
+
+        .qr-text {
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .qr-img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            /* Mantiene le proporzioni del QR code senza deformarlo */
+            flex-shrink: 0;
+            /* Evita che l'immagine si rimpicciolisca se il testo a lato è lungo */
+        }
+
+        /* Copertina specifica */
+        .cover-panel {
+            text-align: right;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .logo-img {
+            max-width: 160px;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            color: var(--arancio-tenue);
+            font-weight: bold;
+        }
+
+        .subsubtitle {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            color: var(--arancio-tenue);
+            font-weight: bold;
+        }
+
+        /* Regole per la Stampa PDF (Ottimizzata in Scala di Grigi) */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="page">
+
+        <div class="panel">
+            <h2>Explore the Surroundings</h2>
+
+            <h3>DSU Canteens</h3>
+            <p><strong>Betti Canteen (10 min walk):</strong> Located at Largo Marchesi 12, it is open Monday to Friday, from 12:00 to 14:30 and from 19:00 to 21:15. It also offers take-away options such as sandwiches, focaccias, large salads/poké, and pizza slices, depending on daily availability.</p>
+            <p><strong>Praticelli Canteen (15 min walk):</strong> Located on the ground floor of the residence of the same name, it is open every day, including weekends and holidays, from 12:00 to 14:30 and from 19:00 to 21:30. You can also get a whole pizza as your meal or pre-order a take-away meal.</p>
+            <p>Always check the official website for any schedule changes due to unexpected service interruptions, strikes, or holidays. Also, with the <strong>MyDSU</strong> app, you can get access to the daily menu!</p>
+            
+            <h3>Supermarkets and Home Goods</h3>
+            <ul>
+                <li><strong>Coop</strong>: Grocery store (10-minute walk).</li>
+                <li><strong>Conad</strong>: Grocery store (15-minute walk).</li>
+                <li><strong>Lidl</strong>: Grocery store (15-minute walk).</li>
+                <li><strong>Carrefour</strong>: Grocery store (20-minute walk).</li>
+                <li><strong>Livit Casa</strong>: Home goods (10-minute walk).</li>
+                <li><strong>Iper Shopping</strong>: Home goods (15-minute walk).</li>
+            </ul>
+
+            <h3>Sports</h3>
+            <ul>
+                <li><strong>Cisanello Swimming Pool:</strong> Located right behind the Betti canteen, about a 10-minute walk away.</li>
+                <li><strong>Fit Active Pisa:</strong> Gym located near Polo Fibonacci, about a 10-minute walk from the residence.</li>
+                <li><strong>Praticelli Gym:</strong> Located on the ground floor of the Praticelli residence, a 15-minute walk away.</li>
+                <li><strong>CUS Pisa:</strong> The University Sports Center is located nearly a 30-minute walk from the residence.</li>
+            </ul>
+
+            <h3>Pharmacy and Medical Center</h3>
+            <ul>
+                <li><strong>Guardia Medica (Out-of-hours Medical Service):</strong> Located on the street parallel to the residence, at Via Garibaldi 198.</li>
+                <li><strong>Farmacia Comunale 3 (Public Pharmacy):</strong> Located about a 15-minute walk from the residence, at Via Battisti 17.</li>
+                <li><strong>Praticelli Vending Machine:</strong> Inside the Praticelli residence, there is a vending machine stocked with basic over-the-counter parapharmaceutical products.</li>
+            </ul>
+        </div>
+
+        <div class="panel">
+            <div class="box-contatti">
+                <h2>Useful Contacts</h2>
+                <p><strong>San Cataldo Front Desk:</strong><br>
+                    <a href="tel:050567800">050 567800</a><br>
+                </p>
+                <p><strong>DSU Toscana:</strong><br>
+                    <a>Via Support Ticket on the Student Portal</a><br>
+                    <a href="https://sportellostudente.dsu.toscana.it/">https://sportellostudente.dsu.toscana.it/</a>
+                </p>
+            </div>
+
+            <h2>Quick Links</h2>
+            <div class="qr-container">
+                <div class="qr-item">
+                    <img src="../img/qr-bando.svg" alt="QR Code Call and FAQ" class="qr-img">
+                    <a href="https://www.dsu.toscana.it/borsa-di-studio" target="_blank" class="qr-text">Scholarship Call & FAQ</a>
+                </div>
+                <div class="qr-item">
+                    <img src="../img/qr-mensa.svg" alt="QR Code Canteen Menu" class="qr-img">
+                    <a href="https://canteen.dsutoscana.cloud/menu/" target="_blank" class="qr-text">Canteen Menu</a>
+                </div>
+                <div class="qr-item">
+                    <img src="../img/qr-moduli.svg" alt="QR Code Forms and Regulations" class="qr-img">
+                    <a href="https://www.dsu.toscana.it/-/regolamenti-e-disciplinari" target="_blank"
+                        class="qr-text">DSU Forms & Regulations</a>
+                </div>
+                <div class="qr-item">
+                    <img src="../img/qr-online.svg" alt="QR Code Online Version" class="qr-img">
+                    <a href="https://atomicdonuts.github.io/locandina_sancataldo/" target="_blank"
+                        class="qr-text">Updated Online Version of the Guide</a>
+                </div>
+            </div>
+
+            <div class="box-avviso">
+                WHATSAPP GROUP ACCESS<br><br>
+                Request the access code or invitation link exclusively from the residence Reception Desk.
+            </div>
+        </div>
+
+        <div class="panel cover-panel">
+            <h1>Survival Guide</h1>
+            <div class="subtitle">San Cataldo Edition</div>
+            <div class="subsubtitle">Brought to you by your student representatives</div>
+        </div>
+
+    </div>
+
+    <div class="page">
+
+        <div class="panel">
+            <h2>The Laundry Area</h2>
+            <p>The laundry room is located in the basement of Block A.<br> There is no access to it from Block B.<br> It is open from 6:30 AM to 12:00 AM (midnight).</p>
+
+            <h3>Laundry Tokens</h3>
+            <p>Tokens must be collected at the reception desk. There are 8 tokens in total per month, usable for both the dryer (providing a 1-hour drying cycle) and the washing machines (providing a 1h 45m cycle). The first 4 tokens can be collected during the first half of the month (1st to 15th) and the remaining 4 during the second half (16th to 30th/31st).</p>
+
+            <h3>General Rules</h3>
+            <ul>
+                <li><strong>Booking:</strong> To use a washing machine or dryer, you must book a slot using the sign-up sheets placed on each machine. Do not use a machine if you haven't booked it or if you know your cycle will overlap with the next person's slot!</li>
+                <li><strong>Items Forbidden:</strong> Washing or drying carpets, rugs, and shoes is strictly forbidden!</li>
+                <li><strong>Detergents:</strong> Using powder detergents or any detergents not specifically formulated for washing machines is strictly forbidden!</li>
+                <li><strong>Safety:</strong> Touching the industrial power sockets is strictly forbidden!</li>
+                <li><strong>Cleanliness:</strong> You must leave the machines clean after use. This includes removing all your items and cleaning the dryer lint filters! Throw empty bottles and color catcher sheets into the trash. Always leave the machine doors slightly open to prevent bacteria and mold growth.</li>
+                <li><strong>Drying Racks:</strong> There are no communal drying racks in the laundry room! Do not take or use someone else's personal drying rack!</li>
+            </ul>
+
+            <div class="box-salvia">
+                <h3>Extra Tips!</h3>
+                <ul>
+                    <li>Since most wash cycles last longer than an hour, try to always book at least a 2-hour slot so you do not overlap with the next turn. Depending on the load size and water temperature, machines can take longer than the time shown on the timer.</li>
+                    <li>If you are running late or need to borrow a drying rack, give a heads-up in the "Laundry Chat" within the WhatsApp community!</li>
+                    <li>You will find QR codes on the washing machines explaining how to use them and program durations. Remember you can always use the "Time Save" (Risparmia Tempo) function to shorten the wash cycle!</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h2>Room Life and Safety</h2>
+
+            <h3>Essential Communications</h3>
+            <ul>
+                <li><strong>WhatsApp Community:</strong> Do not mute the "Bacheca" (Notice Board) channel; that is where you will find announcements about room checks, maintenance issues, and updates from your representatives.</li>
+                <li><strong>In-room Landline:</strong> Keep it plugged in; the reception desk uses it to contact you directly.</li>
+            </ul>
+
+            <h3>Coexistence & Community Living</h3>
+            <ul>
+                <li><strong>Quiet Hours:</strong> Respect the nightly quiet hours from 11:00 PM to 8:00 AM. Keep noise to an absolute minimum out of respect for residents who are sleeping.</li>
+                <li><strong>Cleanliness:</strong> Keep your room and communal spaces clean.</li>
+                <li><strong>Absences:</strong> If you sleep out for even a single night, notify the reception desk and hand in your access card. For absences exceeding 35 days, you must notify the "Ufficio Residenze" (Residence Office) and completely empty your room.</li>
+            </ul>
+
+            <h3>Safety and Prohibitions</h3>
+            <ul>
+                <li><strong>Fire Safety:</strong> Smoking or lighting candles inside is strictly forbidden; doing so risks setting off the alarms and evacuating the entire building.</li>
+                <li><strong>Appliances:</strong> High-power appliances or those with exposed heating elements are strictly prohibited.</li>
+                <li><strong>Emergency Doors:</strong> Do not use emergency exits for regular transit or to let guests in.</li>
+                <li><strong>Furniture and Walls:</strong> Do not move the furniture or hang anything on the walls to avoid damaging the plaster.</li>
+            </ul>
+
+            <div class="box-salvia">
+                <h3>Guests: Access Rules</h3>
+                <p>Guests are allowed only from 8:00 AM to 1:00 AM, provided they register at the front desk with a valid ID and only while you are present. If you live in a double room, you can request overnight hospitality for a family member or friend (check the DSU website for details).</p>
+            </div>          
+        </div>
+
+        <div class="panel">
+            <h2>Life in the Residence</h2>
+
+            <h3>Shared Kitchens</h3>
+            <p>Located on each floor (at the end of the Block B hallway).<br> Inside, you will find induction hobs, microwaves, kettles, and personal lockers, for which you can request the key at the front desk! Always clean the hobs, tables, and microwave immediately after use, do not leave dirty dishes in the sink, and watch out for perishable food in your locker.</p>
+
+            <h3>Study Rooms</h3>
+            <p>Open 24/7, located on all floors.<br> There is at least one study room in Block A on every floor. Additionally, on the 1st and 3rd floors, there are central study rooms located between the two blocks. Finally, on the 3rd floor, there is also a study room in Block B. Please maintain silence so as not to disturb others, and remember that eating inside the study rooms is forbidden.</p>
+
+            <h3>Relax Areas</h3>
+            <p>Located opposite the study rooms on the 1st and 3rd floors, featuring small tables and sofas. On the 3rd floor, you'll find table tennis (ping-pong) and foosball: you can request paddles and board games at the reception desk. Treat them with care and keep your voice down.</p>
+
+            <h3>Media/Video Rooms</h3>
+            <p>Available on every floor (except the ground floor), open from 8:00 AM to 1:00 AM. Book your slot at the reception desk to collect the keys. Use them exclusively for watching multimedia content (not for studying with the screen off) and always leave them tidy.</p>
+
+            <h3>Residence Activities</h3>
+            <p>Keep an eye on the Community to discover activities and social nights organized by your student representatives or DSU tutors!</p>
+
+            <div class="box-salvia">
+                <h3>Service Info</h3>
+                <p><strong>Wi-Fi (DSU-PI):</strong> Log in using your Unipi credentials. Maximum 2 devices. Sessions expire after 6 hours.</p>
+                <p><strong>Coffee Break:</strong> Pay at the vending machines (ground floor) by downloading the Coven app.</p>
+                <p><strong>Shipping and Parcels:</strong> Fill out the authorization form (delega) at the front desk! The address to use is:<br> <em>Via Paolo Semeraro 7/9, 56124 Pisa PI</em><br> (Make sure to specify "Residenza Universitaria" to avoid incorrect deliveries to the nearby Guardia di Finanza headquarters!). </p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
